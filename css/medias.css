@@ -1,0 +1,150 @@
+/*----- Medias Queries -----*/
+
+    /*-- 480px --*/
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .visible{
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.hidden{
+    display: block !important;
+    visibility: visible !important;
+}
+
+  header > nav > .navbar {
+      display: none;
+  }
+
+  .nav-pages{
+    padding: 0;
+    height: 10vh;
+  }
+
+  #sidenav {
+      display: block;
+      max-width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+  }
+  .iframe{
+    display: none;
+  }
+  .contentCards > .cardEmpresa{
+    display: none;
+  }
+  .contentCards > .cardsMobile{
+    display: block;
+  }
+  .imgPrivacy > .card{
+    height: 40%;
+  }
+  .imgPrivacy > .card > .card-body > p{
+    width: 100%;
+    font-size: 13px;
+  }
+  .titleBudgets > h5{
+    font-size: 16px;
+  }
+}
+
+  /*-- 768px --*/
+
+@media (min-width: 768px) and (max-width: 987px) {
+  .visible{
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.hidden{
+    display: block !important;
+    visibility: visible !important;
+}
+
+  header > nav > .navbar {
+    display: none;
+  }
+
+  .nav-pages{
+    padding: 0;
+    height: 10vh;
+  }
+  
+  
+  #sidenav {
+      display: block;
+      max-width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+  }
+  .iframe{
+    display: none;
+  }
+  .contentCards > .cardEmpresa{
+    display: block;
+  }
+  .contentCards > .cardsMobile{
+    display: none;
+  }
+  .imgPrivacy > .card{
+    height: 40%;
+  }
+  .imgPrivacy > .card > .card-body > p{
+    width: 40%;
+  }
+  .titleBudgets > h5{
+    font-size: 16px;
+  }
+}
+      
+    /*-- 1279px --*/
+
+@media (min-width: 988px) and (max-width: 1279px) {
+    .navbar {
+        display: block;
+        width: 98%;
+    }
+    #sidenav{
+        display: none;
+    }
+    .contentCards > .cardEmpresa{
+      display: block;
+    }
+    .contentCards > .cardsMobile{
+      display: none;
+    }
+    .imgPrivacy > .card{
+      height: 28vw;
+    }
+    .imgPrivacy > .card > .card-body > p{
+      width: 40%;
+    }
+}
+
+        /*-- 1280+px --*/
+
+@media (min-width: 1280px) and (max-width: 2500px){
+    .navbar {
+        display: block;
+        width: 98%;
+    }
+    #sidenav {
+        display: none;
+    }
+    .contentCards > .cardEmpresa{
+      display: block;
+    }
+    .contentCards > .cardsMobile{
+      display: none;
+    }
+    .imgPrivacy > .card{
+      height: 28vw;
+    }
+    .imgPrivacy > .card > .card-body > p{
+      width: 40%;
+      font-size: 20px;
+    }
+}
