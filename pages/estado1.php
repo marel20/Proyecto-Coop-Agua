@@ -47,8 +47,8 @@ if($_SESSION['acceso']==2){
       <!--Start Navbar-->
       <nav id="nav" class="nav-pages">
         <div class="navbar">
-          <div
-            ><img style="width: 50%; margin-top: -40px" class="logo" src="../assets/logo/logo.png" alt="Logo-Coop-Agua-Potable"
+        <div
+            ><img style="width: 7vw; margin-top: -37%;" class="logo" src="../assets/logo/logo.png" alt="Logo-Coop-Agua-Potable"
           /></div>
 
           <h2>Toma de Estados</h2>
