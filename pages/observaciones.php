@@ -43,35 +43,90 @@ if($_SESSION['acceso']==1){
     </script>
   </head>
   <body>
-    <header>
-      <div class="container-navbar" style="margin: 30px auto;">
-        <div>
-          <a class="nav-button2 backButton" href="administracion.php"
-            ><i class="fas fa-arrow-left"></i><p>Atras</p></a>
+  <header>
+      <!--Start Navbar-->
+      <nav id="nav" class="nav-pages">
+        <div class="navbar">
+          <div
+            ><a class="back-button" href="administracion.php"><i class="fas fa-angle-left"></i>Atrás</a>
+          </div>
+
+          <ul>
+            <li><a href="nuevosocio.php">Cargar Socio</a></li>
+            <li><a href="listasocios.php">Listado de Socios</a></li>
+            <li><a href="estado.php">Tomar Estado</a></li>
+            <li><a href="baja.php">Editar / Eliminar</a></li>
+            <li><a href="observaciones.php">Observaciones</a></li>
+          </ul>
+          <a class="btn-ingresar" href="../index.php">Salir</a>
+
         </div>
-  
-        <nav id="nav">
-          <ul class="nav-list">
-            <li class="nav-link"><a href="nuevosocio.php">Cargar Socio</a></li>
-            <li class="nav-link">
-              <a href="listasocios.php">Listado de Socios</a>
+
+      </nav>
+
+      <!--End Navbar-->
+
+      <!--Start Sidenav-->
+      <div id="sidenav" class="sidenav navbar" data-mdb-right="true">
+        <div class="imgSidenav nav-pages">
+          <div
+            ><a class="back-button2" href="administracion.php"><i class="fas fa-angle-left"></i>Atrás</a>
+          </div>
+          <button
+            id="btnHamburguer"
+            class="btnVisible navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseWidthExample"
+            aria-expanded="false"
+            aria-controls="collapseWidthExample"
+          >
+          <img src="../assets/icons/menu.png" alt="menu">
+          </button>
+        </div>
+        <div
+          class="side-nav collapse collapse-horizontal text-center"
+          id="collapseWidthExample"
+        >
+          <button
+            id="btnHamburguer"
+            class="btnVisible navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseWidthExample"
+            aria-expanded="false"
+            aria-controls="collapseWidthExample"
+          >
+          <i class="far fa-times-circle"></i>
+
+          </button>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 sidenav-menu text-center">
+            <li class="nav-li nav-item">
+              <a class="nav-link active" href="nuevosocio.php">Cargar Socio</a>
             </li>
-            <li class="nav-link">
-              <a href="estado.php">Tomar Estado</a>
+            <li class="nav-li nav-item">
+              <a class="nav-link active" href="listasocios.php"
+                >Listado de Socios</a
+              >
             </li>
-            <li class="nav-link">
-              <a href="baja.php">Editar / Eliminar</a>
+            <li class="nav-li nav-item">
+              <a class="nav-link active" href="estado.php"
+                >Tomar Estado</a
+              >
             </li>
-            <li class="nav-link">
-              <a href="observaciones.php">Observaciones</a>
+            <li class="nav-li nav-item">
+              <a class="nav-link active" href="baja.php">Editar / Eliminar</a>
+            </li>
+            <li class="nav-li nav-item">
+              <a class="nav-link active" href="observaciones.php">Observaciones</a>
             </li>
           </ul>
-          <!-- <a class="nav-button" href="pages/ingreso.html">Ingresar</a> -->
-          <a class="nav-button" href="../index.php">Salir</a>
-        </nav>
-  
-        <div class="nav-toggle">|||</div>
+            
+          <a class="btn-ingresar2" href="../index.php">Salir</a>
+
+        </div>
       </div>
+      <!--End Sidenav-->
     </header>
 
     <main>
@@ -79,24 +134,29 @@ if($_SESSION['acceso']==1){
         <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
           <div class="searchPartner">
             <div>
+              <label>Numero De Socio:</label>
+              <input type="number" name="num">
+            </div>
+            <div>
               <label>Folio:</label>
-              <input type="number" name="numero">
+              <input type="number" name="folio">
             </div>
             <div>
               <label>Nombre:</label>
               <input type="text" name="nombre">
             </div>
             <div>
-              <input type="submit" class="nav-button2" name="enviar" value="BUSCAR">
+              <input type="submit" class="btn-ingresar" name="enviar" value="BUSCAR">
             </div>
             <div>
-              <input href="pago.php" type="submit" class="nav-button2" value="MOSTRAR TODOS">
+              <input href="pago.php" type="submit" class="btn-ingresar" value="MOSTRAR TODOS">
             </div>
           </div>
         </form>
         <div class="tabla text-center">
             <table class="table">
                 <thead class="table-items">
+                    <th>Numero De Socio</th>
                     <th>Folio</th>
                     <th>Nombre</th>
                     <th>Direccion</th>
@@ -105,46 +165,55 @@ if($_SESSION['acceso']==1){
                 </thead>
             
                 <tbody>
-              <?php
-                if(isset($_POST['enviar'])){
-                  $num=$_POST['numero'];
-                  $nom=$_POST['nombre'];
-                  if(empty($_POST['numero']) && empty($_POST['nombre'])){
-                    echo '<script language="javascript"> alert ("Debe ingersar el nombre o numero de socio para poder buscarlo!!!"); window.location.href="pago.php" </script>';
-                  }else{
-                    if(empty($_POST['nombre'])){
-                      $sql="SELECT * FROM socios where folio=".$num;
-                    }
-                    if(empty($_POST['numero'])){
-                      $sql="SELECT * FROM socios where nombre like '%".$nom."%'";
-                    }
-                    if(!empty($_POST['numero']) && !empty($_POST['nombre'])){
-                      $sql="SELECT * FROM socios where folio=".$num;
-                    }
-                  }
-                  $resultado = mysqli_query($conectar, $sql);
-                  while($filas=mysqli_fetch_assoc($resultado)){
-                    if($filas['observaciones']!='*'){
-              ?>
+                <?php
+                    if(isset($_POST['enviar'])){
+                      $num=$_POST['folio'];
+                      $nom=$_POST['nombre'];
+                      $nums=$_POST['num'];
+
+                      if(empty($_POST['folio']) && empty($_POST['nombre']) && empty($_POST['num'])){
+                        echo '<script language="javascript"> alert ("Debe ingersar el nombre, numero de socio o folio para poder buscarlo!!!"); window.location.href="observaciones.php" </script>';
+                      }else{
+                        if(empty($_POST['nombre']) && empty($_POST['num'])){
+                          $sql="SELECT * FROM socios where folio=".$num;
+                        }
+                        if(empty($_POST['folio']) && empty($_POST['num'])){
+                          $sql="SELECT * FROM socios where socio like '%".$nom."%'";
+                        }
+                        if(empty($_POST['folio']) && empty($_POST['nombre'])){
+                          $sql="SELECT * FROM socios where num=".$nums;
+                        }
+                        if(!empty($_POST['folio']) && !empty($_POST['nombre']) && !empty($_POST['num'])){
+                          $sql="SELECT * FROM socios where folio=".$num;
+                        }
+                      }
+                      $resultado = mysqli_query($conectar, $sql);
+                      while($filas=mysqli_fetch_assoc($resultado)){
+                        if($filas['observaciones']!='*'){
+              
+                ?>
                       <tr>
+                        <td data-label="Número" class="text-center"><?php echo $filas['num'] ?></td>
                         <td data-label="Folio" class="text-center"><?php echo $filas['folio'] ?></td>
                         <td data-label="Nombre" class="text-center"><?php echo $filas['socio'] ?></td>
                         <td data-label="Domicilio" class="text-center"><?php echo $filas['direccion'] ?></td>
-                        <td data-label="observaciones" class="text-center"><?php echo $filas['observaciones'] ?></td>  
+                        <td data-label="Observaciones" class="text-center"><?php echo $filas['observaciones'] ?></td>  
                       </tr>
               <?php
+                      }
                     }
-                  }
+                    
 
               }else{
                   while($filas=mysqli_fetch_assoc($resultado)){
                     if($filas['observaciones']!='*'){
               ?>
                       <tr>
+                        <td data-label="Número" class="text-center"><?php echo $filas['num'] ?></td>
                         <td data-label="Folio" class="text-center"><?php echo $filas['folio'] ?></td>
                         <td data-label="Nombre" class="text-center"><?php echo $filas['socio'] ?></td>
                         <td data-label="Domicilio" class="text-center"><?php echo $filas['direccion'] ?></td>
-                        <td data-label="observaciones" class="text-center"><?php echo $filas['observaciones'] ?></td> 
+                        <td data-label="Observaciones" class="text-center"><?php echo $filas['observaciones'] ?></td> 
                       </tr>
             <?php
                     }
@@ -162,16 +231,142 @@ if($_SESSION['acceso']==1){
     </main>
 
       <!-- Footer -->
-    <footer class="text-center text-lg-start bg-white text-muted">
-      <!-- Section: Social media -->
-      <section
-        class="d-flex justify-content-center justify-content-lg-around p-3 border-bottom"
-      ></section>
-      <!-- Section: Social media -->
-
+      <footer>
+      <section>
+        <!-- Left -->
+        <div class="info">
+          <h3 class="text-white">Cooperativa de Agua Potable Correa</h3>
+          <h5 class="text-white text-center">Rafael Obligado 1358, Correa, Argentina</h5>
+        </div>
+        <!-- Left -->
+        
+        <!-- Right -->
+        <div class="social-media">
+          <a
+            href="https://www.facebook.com/coopaguacorrea"
+            target="_blank"
+            class="me-4 link-secondary"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/coopaguacorrea"
+            target="_blank"
+            class="me-4 link-secondary"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:admin@coopaguacorrea.com.ar" target="_blank" class="me-4 link-secondary">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:03471492045" target="_blank" class="me-4 link-secondary">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <div class="separator">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+        </div>
       <!-- Copyright -->
       <div class="text-center text-white p-3">
-        © 2022 Copyright:
+        © 2023 Copyright:
         <b
           ><a
             class="text-white"

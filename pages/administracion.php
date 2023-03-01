@@ -32,16 +32,16 @@ if($_SESSION['acceso']==1){
     />
     <!-- MDB -->
     <link rel="stylesheet" href="../css/mdb.min.css" />
-    <title>Administracion</title>
+    <title>Administración</title>
   </head>
   <body id="header">
-  <header>
+    <header>
       <!--Start Navbar-->
       <nav id="nav" class="nav-pages">
         <div class="navbar">
           <div
-            ><a class="back-button" href="../index.php"><i class="fas fa-angle-left"></i>Atrás</a>
-          </div>
+            ><img style="width: 7vw; margin-top: -37%;" class="logo" src="../assets/logo/logo.png" alt="Logo-Coop-Agua-Potable"
+          /></div>
 
           <ul>
             <li><a href="nuevosocio.php">Cargar Socio</a></li>
@@ -62,7 +62,7 @@ if($_SESSION['acceso']==1){
       <div id="sidenav" class="sidenav navbar" data-mdb-right="true">
         <div class="imgSidenav nav-pages">
           <div
-            ><img class="logo" src="../assets/logo/logo.png" alt="Logo-Coop-Agua-Potable">
+            ><img style="width: 35%;" class="logo" src="../assets/logo/logo.png" alt="Logo-Coop-Agua-Potable">
           </div>
           <button
             id="btnHamburguer"
@@ -114,7 +114,7 @@ if($_SESSION['acceso']==1){
             </li>
           </ul>
             
-          <a class="btn-ingresar" href="../index.php">Salir</a>
+          <a class="btn-ingresar2" href="../index.php">Salir</a>
 
         </div>
       </div>
@@ -123,7 +123,7 @@ if($_SESSION['acceso']==1){
 
     <main>
       <div class="text-admin">
-        <div class="col-lg-12 col-md-12 mb-4 col-12 text-center">
+        <div class="logo-admin text-center">
           <img src="../assets/logo/logo.png" alt="" />
         </div>
         <div class="text-center">
@@ -134,13 +134,139 @@ if($_SESSION['acceso']==1){
     </main>
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-white text-muted">
-      <!-- Section: Social media -->
-      <section
-        class="d-flex justify-content-center justify-content-lg-around p-3 border-bottom"
-      ></section>
-      <!-- Section: Social media -->
-
+    <footer>
+      <section>
+        <!-- Left -->
+        <div class="info">
+          <h3 class="text-white">Cooperativa de Agua Potable Correa</h3>
+          <h5 class="text-white text-center">Rafael Obligado 1358, Correa, Argentina</h5>
+        </div>
+        <!-- Left -->
+        
+        <!-- Right -->
+        <div class="social-media">
+          <a
+            href="https://www.facebook.com/coopaguacorrea"
+            target="_blank"
+            class="me-4 link-secondary"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/coopaguacorrea"
+            target="_blank"
+            class="me-4 link-secondary"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:admin@coopaguacorrea.com.ar" target="_blank" class="me-4 link-secondary">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:03471492045" target="_blank" class="me-4 link-secondary">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <div class="separator">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+        </div>
       <!-- Copyright -->
       <div class="text-center text-white p-3">
         © 2023 Copyright:

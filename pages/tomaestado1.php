@@ -38,23 +38,68 @@ if($_SESSION['acceso']==2){
     <title>Toma De Estados</title>
   </head>
   <body>
-    <header>
-        <div class="container-navbar" style="margin: 30px auto;">
-          <div>
-            <a class="nav-button2 backButton" href="estado1.php"
-              ><i class="fas fa-arrow-left"></i><p>Atras</p></a>
+  <header>
+      <!--Start Navbar-->
+      <nav id="nav" class="nav-pages">
+        <div class="navbar">
+        <div
+            ><a class="back-button" href="estado1.php"><i class="fas fa-angle-left"></i>Atrás</a>
           </div>
-  
-          <nav id="nav">
-            <h1 class="text-white">Toma De Estados</h1>
-            <!-- <a class="nav-button" href="pages/ingreso.html">Ingresar</a> -->
-            <a class="nav-button" href="../index.php">Salir</a>
-          </nav>
-  
-          <div class="nav-toggle">|||</div>
+
+          <h2>Toma de Estados</h2>
+          <a class="btn-ingresar" href="../index.php">Salir</a>
+
         </div>
-      </header>
-      <main>
+
+      </nav>
+
+      <!--End Navbar-->
+
+      <!--Start Sidenav-->
+      <div id="sidenav" class="sidenav navbar" data-mdb-right="true">
+        <div class="imgSidenav nav-pages">
+        <div
+            ><a class="back-button2" href="estado1.php"><i class="fas fa-angle-left"></i>Atrás</a>
+          </div>
+          <button
+            id="btnHamburguer"
+            class="btnVisible navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseWidthExample"
+            aria-expanded="false"
+            aria-controls="collapseWidthExample"
+          >
+          <img src="../assets/icons/menu.png" alt="menu">
+          </button>
+        </div>
+        <div
+          class="side-nav collapse collapse-horizontal text-center"
+          id="collapseWidthExample"
+        >
+          <button
+            id="btnHamburguer"
+            class="btnVisible navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseWidthExample"
+            aria-expanded="false"
+            aria-controls="collapseWidthExample"
+          >
+          <i class="far fa-times-circle"></i>
+
+          </button>
+          
+          <h2 class="text-white" style="margin-bottom: 90px;">Toma de Estados</h2>
+            
+          <a class="btn-ingresar2" href="../index.php">Salir</a>
+
+        </div>
+      </div>
+      <!--End Sidenav-->
+    </header>
+
+  <main>
 
       
 <?php
@@ -87,10 +132,17 @@ if($_SESSION['acceso']==2){
 
               $sql="UPDATE socios SET socio='".$nombre."', direccion='".$domicilio."', estado='".$estadonuevo."', consumo='".$consumo."', observaciones='".$observacion."' where folio='".$folio."'";
               $resultado = mysqli_query($conectar, $sql);
-              $siguiente=$folio+1;
+              
+              $ssql = "SELECT folio from socios where folio > $folio order by folio asc limit 1";
+              $cuer = mysqli_query($conectar, $ssql);
+              $agua = mysqli_fetch_array($cuer);
+              $next = $agua['folio'];
+              if ($next != ""){
+              echo ' anterior ';
+              }
               if($resultado){
                   
-                echo '<script language="javascript"> alert ("Cambios Realizados Correctamente"); window.location.href="tomaestado1.php?folio='.$siguiente.'"</script>';
+                echo '<script language="javascript"> alert ("Cambios Realizados Correctamente en el Folio '.$folio.'"); window.location.href="tomaestado1.php?folio='.$next.'"</script>';
               }else{
                   echo '<script language="javascript"> alert ("Cambios NO Realizados"); window.location.href="tomaestado1.php?folio='.$folio.'" </script>';
               }
@@ -122,20 +174,22 @@ if($_SESSION['acceso']==2){
     ?>
   <div class="form" >
     <form action="<?=$_SERVER['PHP_SELF']?>" method='post'>
-    <div class="searchPartner">
-        <h1><?php echo $folio;?></h1>
-    </div>
-    <div class="searchPartner">
-        <h2><?php echo $nombre;?></h2>
-    </div>
-  
-    <div class="searchPartner">
-        <h3><?php echo $direccion;?></h3>
+    <div class="dates">
+      <div class="searchPartner">
+          <h1><?php echo $folio;?></h1>
+      </div>
+      <div class="searchPartner">
+          <h2><?php echo $nombre;?></h2>
+      </div>
+    
+      <div class="searchPartner">
+          <h3><?php echo $direccion;?></h3>
+      </div>
     </div>
     <div class="checks-asistencia">
       
     <h4>Estado Actual:</h4>
-        <div class="form-check">
+        <div class="label form-check">
         <input  name="estadonuevo" class="form-control" type="number" required>
         </div><br>       
     
@@ -161,7 +215,7 @@ if($_SESSION['acceso']==2){
         
 
 
-        <input class="nav-button2" type="submit" name="enviar" value="ACTUALIZAR"><br>
+        <input class="btn-ingresar" type="submit" name="enviar" value="ACTUALIZAR"><br>
         <input type="hidden" name="nombre" value="<?php echo $nombre;?>"><br>            
         <input type="hidden" name="direccion" value="<?php echo $direccion;?>"><br>                 
         <input type="hidden" name="estado" value="<?php echo $estado;?>"><br>
@@ -177,16 +231,142 @@ if($_SESSION['acceso']==2){
 
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-white text-muted">
-      <!-- Section: Social media -->
-      <section
-        class="d-flex justify-content-center justify-content-lg-around p-3 border-bottom"
-      ></section>
-      <!-- Section: Social media -->
-
+    <footer>
+      <section>
+        <!-- Left -->
+        <div class="info">
+          <h3 class="text-white">Cooperativa de Agua Potable Correa</h3>
+          <h5 class="text-white text-center">Rafael Obligado 1358, Correa, Argentina</h5>
+        </div>
+        <!-- Left -->
+        
+        <!-- Right -->
+        <div class="social-media">
+          <a
+            href="https://www.facebook.com/coopaguacorrea"
+            target="_blank"
+            class="me-4 link-secondary"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/coopaguacorrea"
+            target="_blank"
+            class="me-4 link-secondary"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="mailto:admin@coopaguacorrea.com.ar" target="_blank" class="me-4 link-secondary">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:03471492045" target="_blank" class="me-4 link-secondary">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </section>
+      <div class="separator">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+        </div>
       <!-- Copyright -->
       <div class="text-center text-white p-3">
-        © 2022 Copyright:
+        © 2023 Copyright:
         <b
           ><a
             class="text-white"

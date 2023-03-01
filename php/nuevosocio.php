@@ -2,7 +2,7 @@
     //conectar al servidor
    include 'conectar.php';
     //recuperamos las variables del formulario
-    
+    $num=$_POST["num"];
     $folio=$_POST["folio"];
     $nombre=$_POST["nombre"];
     $domicilio=$_POST["domicilio"];
@@ -10,7 +10,7 @@
     $consumo=$_POST["consumo"];
    
 
-    $sql="INSERT INTO socios VALUES ('$folio','$nombre','$domicilio','$estado','$consumo','*')";
+    $sql="INSERT INTO socios VALUES ('$num','$folio','$nombre','$domicilio','$estado','$consumo','*')";
 
     //ejecutar la secuencia sql
 

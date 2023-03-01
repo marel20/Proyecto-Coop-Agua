@@ -29,24 +29,66 @@
       top: 0;
       left: 0;
   }
-  .iframe{
+
+  .text-admin .logo-admin{
+    margin: 100px auto 0 auto !important;
+  }
+
+  .searchPartner{
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  .table{
+    border: 0;
+  }
+  .table thead{
     display: none;
   }
-  .contentCards > .cardEmpresa{
-    display: none;
-  }
-  .contentCards > .cardsMobile{
+  .table tr{
+    margin-bottom: 50px;
     display: block;
   }
-  .imgPrivacy > .card{
-    height: 40%;
+  .table th, .table td{
+    font-size: 14px !important;
   }
-  .imgPrivacy > .card > .card-body > p{
-    width: 100%;
-    font-size: 13px;
+  .table td{
+    display: block;
+    text-align: right !important;
   }
-  .titleBudgets > h5{
-    font-size: 16px;
+  .table td:last-child {
+    border-bottom: 0px;
+  }
+  .table td::before{
+    content: attr(data-label);
+    font-weight: bold;
+    float: left;
+  }
+  .text-admin{
+    margin: 60px auto !important;
+  }
+  .text-admin h2{
+    font-size: 30px !important;
+  }
+  .checks-asistencia{
+    width: 70% !important;
+  }
+  .items-form{
+    gap: 2px !important;
+  }
+  .checks-asistencia{
+    width: 100% !important;
+  }
+  #contact form{
+    width: 90% !important;
+  }
+  footer section{
+    flex-direction: column-reverse !important;
+    gap: 30px;
+    margin-bottom: 10px;
+  }
+  .separator{
+    width: 95%;
   }
 }
 
@@ -80,23 +122,53 @@
       top: 0;
       left: 0;
   }
-  .iframe{
+
+  .table{
+    border: 0;
+  }
+  .table thead{
     display: none;
   }
-  .contentCards > .cardEmpresa{
+  .table tr{
+    margin-bottom: 80px !important;
     display: block;
   }
-  .contentCards > .cardsMobile{
-    display: none;
+  .table th, .table td{
+    font-size: 22px !important;
   }
-  .imgPrivacy > .card{
-    height: 40%;
+  .table td{
+    display: block;
+    text-align: right !important;
   }
-  .imgPrivacy > .card > .card-body > p{
-    width: 40%;
+  .table td:last-child {
+    border-bottom: 0px;
   }
-  .titleBudgets > h5{
-    font-size: 16px;
+  .table td::before{
+    content: attr(data-label);
+    font-weight: bold;
+    float: left;
+  }
+
+  .searchPartner{
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .checks-asistencia{
+    width: 100% !important;
+  }
+
+  #contact form{
+    width: 90% !important;
+  }
+  footer section{
+    flex-direction: column-reverse !important;
+    gap: 30px;
+    margin-bottom: 10px;
+  }
+  .separator{
+    width: 95%;
   }
 }
       
@@ -110,18 +182,7 @@
     #sidenav{
         display: none;
     }
-    .contentCards > .cardEmpresa{
-      display: block;
-    }
-    .contentCards > .cardsMobile{
-      display: none;
-    }
-    .imgPrivacy > .card{
-      height: 28vw;
-    }
-    .imgPrivacy > .card > .card-body > p{
-      width: 40%;
-    }
+
 }
 
         /*-- 1280+px --*/
@@ -134,17 +195,5 @@
     #sidenav {
         display: none;
     }
-    .contentCards > .cardEmpresa{
-      display: block;
-    }
-    .contentCards > .cardsMobile{
-      display: none;
-    }
-    .imgPrivacy > .card{
-      height: 28vw;
-    }
-    .imgPrivacy > .card > .card-body > p{
-      width: 40%;
-      font-size: 20px;
-    }
+
 }

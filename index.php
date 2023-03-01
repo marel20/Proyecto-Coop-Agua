@@ -106,7 +106,7 @@ $_SESSION['acceso']=0;
             </li>
           </ul>
             
-          <a class="btn-ingresar" href="pages/ingreso.php">Ingresar</a>
+          <a class="btn-ingresar2" href="pages/ingreso.php">Ingresar</a>
 
         </div>
       </div>
@@ -195,7 +195,7 @@ $_SESSION['acceso']=0;
     <!-- Float Buttons -->
 
     <div id="whatsapp" class="btnWsp">
-      <a href="https://wa.me/+5493471..." class="btn-wsp" target="_blank">
+      <a href="https://wa.me/+5493471588212" class="btn-wsp" target="_blank">
         <i class="icon-whatsapp"></i>
         <img
           src="assets/icons/whatsapp.png"
@@ -213,54 +213,140 @@ $_SESSION['acceso']=0;
 
     <!-- Float Buttons -->
 
-
-
     <!-- Footer -->
-    <footer class="text-center text-lg-start text-muted">
-      <!-- Section: Social media -->
-      <section
-        class="d-flex justify-content-center justify-content-lg-around p-3 border-bottom"
-      >
+    <footer>
+      <section>
         <!-- Left -->
-        <div class="me-5 d-none d-lg-block">
+        <div class="info">
           <h3 class="text-white">Cooperativa de Agua Potable Correa</h3>
+          <h5 class="text-white text-center">Rafael Obligado 1358, Correa, Argentina</h5>
         </div>
         <!-- Left -->
-
+        
         <!-- Right -->
-        <div class="social-media text-center">
+        <div class="social-media">
           <a
-            href="https://www.facebook.com/ClubAtleticoCorrea/"
+            href="https://www.facebook.com/coopaguacorrea"
             target="_blank"
             class="me-4 link-secondary"
           >
             <i class="fab fa-facebook-f"></i>
           </a>
           <a
-            href="https://twitter.com/Club_A_Correa"
-            target="_blank"
-            class="me-4 link-secondary"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a
-            href="https://www.instagram.com/clubatleticocorrea/?hl=es"
+            href="https://www.instagram.com/coopaguacorrea"
             target="_blank"
             class="me-4 link-secondary"
           >
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="mailto:.." target="_blank" class="me-4 link-secondary">
+          <a href="mailto:admin@coopaguacorrea.com.ar" target="_blank" class="me-4 link-secondary">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="tel:03471" target="_blank" class="me-4 link-secondary">
+          <a href="tel:03471492045" target="_blank" class="me-4 link-secondary">
             <i class="fas fa-phone"></i>
           </a>
         </div>
         <!-- Right -->
       </section>
-      <!-- Section: Social media -->
-
+      <div class="separator">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+            <div class="visible"></div>
+        </div>
       <!-- Copyright -->
       <div class="text-center text-white p-3">
         © 2023 Copyright:
